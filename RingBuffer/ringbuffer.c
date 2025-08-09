@@ -1,13 +1,6 @@
-#include <stdint.h>
-#include <stdbool.h>
+#include "ringbuffer.h"
 
-#define BUFFER_SIZE 64
-
-typedef struct {
-	uint8_t buffer[BUFFER_SIZE];
-	int head;
-	int tail;
-} RingBuffer;
+RingBuffer buf = {.head = 0,.tail = 0};
 
 void ringbuffer_init(RingBuffer  *buf)
 {
